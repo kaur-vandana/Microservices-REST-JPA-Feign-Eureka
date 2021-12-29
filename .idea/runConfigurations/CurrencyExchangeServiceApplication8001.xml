@@ -1,0 +1,16 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="CurrencyExchangeServiceApplication8001" type="Application" factoryName="Application">
+    <option name="MAIN_CLASS_NAME" value="com.kaur.vandana.microservices.currencyexchangeservice.CurrencyExchangeServiceApplication" />
+    <module name="currency-exchange-service" />
+    <option name="VM_PARAMETERS" value="-Dserver.port=8001" />
+    <extension name="coverage">
+      <pattern>
+        <option name="PATTERN" value="com.kaur.vandana.microservices.currencyexchangeservice.*" />
+        <option name="ENABLED" value="true" />
+      </pattern>
+    </extension>
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>
