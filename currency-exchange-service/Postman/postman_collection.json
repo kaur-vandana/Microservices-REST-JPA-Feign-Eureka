@@ -115,6 +115,25 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "Circuit Breaker",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/sample-api",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"sample-api"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }
