@@ -1,6 +1,6 @@
 package com.kaur.vandana.microservices.currencyexchangeservice;
 
-import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
+import io.github.resilience4j.bulkhead.annotation.Bulkhead;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;
@@ -13,6 +13,39 @@ public class CircuitBreakerController {
 
     private Logger logger = LoggerFactory.getLogger(CircuitBreakerController.class);
 
+
+    @GetMapping("/sample-api")
+    @Bulkhead(name="sample-api")
+    public String sampleApi() {
+        logger.info("/sample-api call received");
+        ResponseEntity<String> forEntity =
+                new RestTemplate().getForEntity("http://localhost:8000/some-url", String.class);
+        return forEntity.getBody();
+    }
+
+    public String hardcodedResponse(Exception e) {
+        return "Fallback-response";
+    }
+
+
+/*     @GetMapping("/sample-api")
+     @CircuitBreaker(name = "default", fallbackMethod = "hardcodedResponse")
+     //    RateLimiter sets the limit to the number requests to an API for a particular time period
+     @RateLimiter(name = "default")
+     public String sampleApi() {
+         logger.info("/sample-api call received");
+         ResponseEntity<String> forEntity =
+                 new RestTemplate().getForEntity("http://localhost:8000/some-url", String.class);
+         return forEntity.getBody();
+     }
+
+    public String hardcodedResponse(Exception e) {
+        return "Fallback-response";
+    }*/
+
+
+
+/*
     @GetMapping("/sample-api")
     @CircuitBreaker(name = "default", fallbackMethod = "hardcodedResponse")
     public String sampleApi() {
@@ -25,6 +58,8 @@ public class CircuitBreakerController {
     public String hardcodedResponse(Exception e) {
         return "Fallback-response";
     }
+*/
+
 
     /*@GetMapping("/sample-api")
     @Retry(name = "sample-api", fallbackMethod = "hardcodedResponse")
@@ -38,6 +73,8 @@ public class CircuitBreakerController {
     public String hardcodedResponse(Exception e) {
         return "Fallback-response";
     }*/
+
+
 
    /* @GetMapping("/sample-api")
     public String sampleApi() {
