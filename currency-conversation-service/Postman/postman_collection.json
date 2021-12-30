@@ -81,7 +81,7 @@
 			"response": []
 		},
 		{
-			"name": "Currency Coversation Service [AUD-> INR] (server port : 8001) Copy",
+			"name": "FEIGN Currency Coversation Service [AUD-> INR] (server port : 8001)",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -96,6 +96,56 @@
 						"currency-conversion-feign",
 						"from",
 						"AUD",
+						"to",
+						"INR",
+						"quantity",
+						"20"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FEIGN Currency Coversation Service [EUR-> INR] (server port : 8001)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8100/currency-conversion-feign/from/EUR/to/INR/quantity/20",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8100",
+					"path": [
+						"currency-conversion-feign",
+						"from",
+						"EUR",
+						"to",
+						"INR",
+						"quantity",
+						"20"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FEIGN Currency Coversation Service [USD-> INR] (server port : 8001)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8100/currency-conversion-feign/from/USD/to/INR/quantity/20",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8100",
+					"path": [
+						"currency-conversion-feign",
+						"from",
+						"USD",
 						"to",
 						"INR",
 						"quantity",
