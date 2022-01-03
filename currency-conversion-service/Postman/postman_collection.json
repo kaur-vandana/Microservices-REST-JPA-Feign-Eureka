@@ -1,12 +1,12 @@
 {
 	"info": {
 		"_postman_id": "6b16c32b-a279-4290-90fb-6f7b985c1387",
-		"name": "Currency Coversation Service",
+		"name": "Currency Coversion Service",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
-			"name": "Currency Coversation Service [USD -> INR] (server port : 8001)",
+			"name": "Currency Coversion Service [USD -> INR] (server port : 8001)",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -31,7 +31,7 @@
 			"response": []
 		},
 		{
-			"name": "Currency Coversation Service [EUR-> INR] (server port : 8001)",
+			"name": "Currency Coversion Service [EUR-> INR] (server port : 8001)",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -56,7 +56,7 @@
 			"response": []
 		},
 		{
-			"name": "Currency Coversation Service [AUD-> INR] (server port : 8001)",
+			"name": "Currency Coversion Service [AUD-> INR] (server port : 8001)",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -81,7 +81,7 @@
 			"response": []
 		},
 		{
-			"name": "FEIGN Currency Coversation Service [AUD-> INR] (server port : 8001)",
+			"name": "FEIGN Currency Coversion Service [AUD-> INR] (server port : 8001)",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -106,7 +106,7 @@
 			"response": []
 		},
 		{
-			"name": "FEIGN Currency Coversation Service [EUR-> INR] (server port : 8001)",
+			"name": "FEIGN Currency Coversion Service [EUR-> INR] (server port : 8001)",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -131,7 +131,7 @@
 			"response": []
 		},
 		{
-			"name": "FEIGN Currency Coversation Service [USD-> INR] (server port : 8001)",
+			"name": "FEIGN Currency Coversion Service [USD-> INR] (server port : 8001)",
 			"request": {
 				"method": "GET",
 				"header": [],

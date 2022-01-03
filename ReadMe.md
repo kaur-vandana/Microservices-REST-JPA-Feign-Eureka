@@ -73,28 +73,32 @@ http://localhost:8000/currency-exchange/from/USD/to/INR
 add image config to pom 
 - Download and Install Maven (Path variables - Maven, M2_HOME)
   - mvn spring-boot:build-image -DskipTests
+  
   - Images (829ff545d81f): 'docker.io/kvandana/currency-exchange-service:0.0.1-SNAPSHOT'
-  - Images (fc04a54317b4): 'docker.io/kvandana/naming-server:0.0.1-SNAPSHOT'
-  - Images (c6ccf58df9a5): 'docker.io/kvandana/currency-conversation-service:0.0.1-SNAPSHOT'
-  - Images (98a9607fbb65): 'docker.io/kvandana/api-gateway:0.0.1-SNAPSHOT'
+  - Images (07bf2f49bd28): 'docker.io/kvandana/naming-server:0.0.1-SNAPSHOT'
+  - Images (1903d2bb6b61): 'docker.io/kvandana/currency-conversion-service:0.0.1-SNAPSHOT'
+  - Images (9e65226baa6d): 'docker.io/kvandana/api-gateway:0.0.1-SNAPSHOT'
 
 
 - docker run -p 8000:8000 kvandana/currency-exchange-service:0.0.1-SNAPSHOT
 - docker run -p 8001:8000 kvandana/currency-exchange-service:0.0.1-SNAPSHOT
 - docker run -p 8761:8761 kvandana/naming-server:0.0.1-SNAPSHOT
-- docker run -p 8100:8100 kvandana/currency-conversation-service:0.0.1-SNAPSHOT
-
-
+- docker run -p 8100:8100 kvandana/currency-conversion-service:0.0.1-SNAPSHOT
 
 - docker-compose --version
 - - cd /Microservices-REST-JPA-Feign-Eureka
 - docker-compose up
 
-- docker push
-- docker push 
-- docker push 
-- docker push 
+- docker push docker.io/kvandana/currency-exchange-service:0.0.1-SNAPSHOT
+- docker push docker.io/kvandana/naming-server:0.0.1-SNAPSHOT
+- docker push docker.io/kvandana/currency-conversion-service:0.0.1-SNAPSHOT
+- docker push docker.io/kvandana/api-gateway:0.0.1-SNAPSHOT
+
 - watch -n 0.1 curl http://localhost:8000/sample-api
+
+
+
+- to remove an image : docker rmi -f fc04a54317b4
 ------------------------------------------------------------------------------------------------------------------------
 
 ------------------------------------------------------------------------------------------------------------------------

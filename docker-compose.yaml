@@ -36,7 +36,7 @@ services:
       - currency-network
 
   currency-conversion:
-    image: docker.io/kvandana/currency-conversation-service:0.0.1-SNAPSHOT
+    image: docker.io/kvandana/currency-conversion-service:0.0.1-SNAPSHOT
     ports:
       - "8100:8100"
     networks:

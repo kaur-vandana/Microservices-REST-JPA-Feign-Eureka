@@ -8,13 +8,14 @@
         <outputRelativeToContentRoot value="true" />
         <module name="api-gateway" />
         <module name="currency-exchange-service" />
-        <module name="currency-conversation-service" />
+        <module name="currency-conversion-service" />
         <module name="naming-server" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="api-gateway" target="11" />
       <module name="currency-conversation-service" target="11" />
+      <module name="currency-conversion-service" target="11" />
       <module name="currency-exchange-service" target="11" />
       <module name="naming-server" target="11" />
     </bytecodeTargetLevel>
@@ -23,6 +24,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="api-gateway" options="-parameters" />
       <module name="currency-conversation-service" options="-parameters" />
+      <module name="currency-conversion-service" options="-parameters" />
       <module name="currency-exchange-service" options="-parameters" />
       <module name="naming-server" options="-parameters" />
     </option>

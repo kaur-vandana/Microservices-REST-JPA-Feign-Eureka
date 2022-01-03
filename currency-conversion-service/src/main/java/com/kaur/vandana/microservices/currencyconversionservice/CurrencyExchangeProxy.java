@@ -9,8 +9,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 //Client side load balancing
 @FeignClient(name = "currency-exchange")
 public interface CurrencyExchangeProxy {
+
     @GetMapping("/currency-exchange/from/{from}/to/{to}")
-    public CurrencyConversion retrieveExchangeValue_repository(
+    CurrencyConversion retrieveExchangeValue_repository(
             @PathVariable String from,
             @PathVariable String to);
 }

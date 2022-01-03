@@ -1,0 +1,278 @@
+{
+	"info": {
+		"_postman_id": "cb4cf8f7-8d50-4bba-b45f-e6a2325af43d",
+		"name": "API-Gateway",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Initial 1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8765/CURRENCY-EXCHANGE/currency-exchange/from/USD/to/INR",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8765",
+					"path": [
+						"CURRENCY-EXCHANGE",
+						"currency-exchange",
+						"from",
+						"USD",
+						"to",
+						"INR"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Initial 2",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8765/CURRENCY-CONVERSATION/currency-conversion/from/USD/to/INR/quantity/10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8765",
+					"path": [
+						"CURRENCY-CONVERSATION",
+						"currency-conversion",
+						"from",
+						"USD",
+						"to",
+						"INR",
+						"quantity",
+						"10"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Initial 3",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8765/CURRENCY-CONVERSATION/currency-conversion-feign/from/USD/to/INR/quantity/10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8765",
+					"path": [
+						"CURRENCY-CONVERSATION",
+						"currency-conversion-feign",
+						"from",
+						"USD",
+						"to",
+						"INR",
+						"quantity",
+						"10"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Lower Case 1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8765/currency-exchange/currency-exchange/from/USD/to/INR",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8765",
+					"path": [
+						"currency-exchange",
+						"currency-exchange",
+						"from",
+						"USD",
+						"to",
+						"INR"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Lower case 2",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8765/currency-conversation/currency-conversion/from/USD/to/INR/quantity/10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8765",
+					"path": [
+						"currency-conversation",
+						"currency-conversion",
+						"from",
+						"USD",
+						"to",
+						"INR",
+						"quantity",
+						"10"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Lower Case 3",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8765/currency-conversation/currency-conversion-feign/from/USD/to/INR/quantity/10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8765",
+					"path": [
+						"currency-conversation",
+						"currency-conversion-feign",
+						"from",
+						"USD",
+						"to",
+						"INR",
+						"quantity",
+						"10"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Routes \"/get\" to \"http://httpbin.org:80\"",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8765/get",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8765",
+					"path": [
+						"get"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Custom Routes 1 - should work",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8765/currency-exchange/from/USD/to/INR",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8765",
+					"path": [
+						"currency-exchange",
+						"from",
+						"USD",
+						"to",
+						"INR"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Custom Routes 2",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8765/currency-conversion/from/USD/to/INR/quantity/10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8765",
+					"path": [
+						"currency-conversion",
+						"from",
+						"USD",
+						"to",
+						"INR",
+						"quantity",
+						"10"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Custom Routes 3 - should work",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8765/currency-conversion-feign/from/USD/to/INR/quantity/10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8765",
+					"path": [
+						"currency-conversion-feign",
+						"from",
+						"USD",
+						"to",
+						"INR",
+						"quantity",
+						"10"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Custom Routes 4 - should work",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8765/currency-conversion-new/from/USD/to/INR/quantity/10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8765",
+					"path": [
+						"currency-conversion-new",
+						"from",
+						"USD",
+						"to",
+						"INR",
+						"quantity",
+						"10"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
