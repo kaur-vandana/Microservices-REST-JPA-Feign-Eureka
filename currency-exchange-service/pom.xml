@@ -41,6 +41,26 @@
 			<artifactId>spring-cloud-starter-config</artifactId>
 		</dependency>
 
+		<!--we want to able to trace a request across multiple miroservices and to be able to do that each request
+		should be assigned a unique id
+		sleuth is a framework that assigns a unique id to each request
+		as the request goes across multiple microservices the id is maintained and the information is sent to the tracing
+		server using that microservices-->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-sleuth</artifactId>
+		</dependency>
+		<!--		zipkin specific dependency-->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-sleuth-zipkin</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.amqp</groupId>
+			<artifactId>spring-rabbit</artifactId>
+			<version>2.3.5</version>
+		</dependency>
 <!--		registry with eureka-->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
