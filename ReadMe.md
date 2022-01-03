@@ -28,14 +28,15 @@ http://localhost:8000/currency-exchange/from/USD/to/INR
   - http://localhost:9411/zipkin/ 
 - Connect Microservices to Zipkin
 
-- Images
-  - https://hub.docker.com/u/
-- Currency Exchange Service 
-  - image 'docker.io/kvandana/currency-exchange-service:0.0.1-SNAPSHOT'
-- Currency Conversion Service
-  - image 'docker.io/kvandana/currency-conversation-service:0.0.1-SNAPSHOT'
-- Naming-server
-  - image 'docker.io/kvandana/naming-server:0.0.1-SNAPSHOT'
+- #### Images
+  - https://hub.docker.com/u/kvandana
+  
+  - Currency Exchange Service 
+    - image 'docker.io/kvandana/currency-exchange-service:0.0.1-SNAPSHOT'
+  - Currency Conversion Service
+    - image 'docker.io/kvandana/currency-conversation-service:0.0.1-SNAPSHOT'
+  - Naming-server
+    - image 'docker.io/kvandana/naming-server:0.0.1-SNAPSHOT'
 ------------------------------------------------------------------------------------------------------------------------
 
 ## Eureka
@@ -67,7 +68,7 @@ http://localhost:8000/currency-exchange/from/USD/to/INR
 
 ------------------------------------------------------------------------------------------------------------------------
 
-# Commands
+# COMMANDS [Window Powershell/ Docker Desktop]
 - docker run -p 9411:9411 openzipkin/zipkin:2.23
 
 add image config to pom 
@@ -95,8 +96,6 @@ add image config to pom
 - docker push docker.io/kvandana/api-gateway:0.0.1-SNAPSHOT
 
 - watch -n 0.1 curl http://localhost:8000/sample-api
-
-
 
 - to remove an image : docker rmi -f fc04a54317b4
 ------------------------------------------------------------------------------------------------------------------------
