@@ -59,7 +59,6 @@
 		<dependency>
 			<groupId>org.springframework.amqp</groupId>
 			<artifactId>spring-rabbit</artifactId>
-			<version>2.3.9</version>
 		</dependency>
 <!--		registry with eureka-->
 		<dependency>
