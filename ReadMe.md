@@ -1,22 +1,17 @@
-- Build an Amazing REST API with Spring Boot
-- Build Microservices with Spring Boot and Spring Cloud
-- Build Containers with Docker
+- REST API with Spring Boot
+- Microservices with Spring Boot and Spring Cloud
+- Containers with Docker
 - orchestrate Microservices with Kubernetes
 
+- Spring Boot 2.4.x+ & Spring Cloud 2020.x+
+- Service Registry using Eureka Naming Server
+- Load Balancing with Spring Cloud LoadBalancer (replacing Ribbon)
+- API Gateway with Spring Cloud Gateway (instead of Zuul)
+- Circuit Breaker with Resilience4j (instead of Hystrix)
+- Distributed Tracing with Zipkin
+- Asynchronous Communication using Rabbit MQ
+
 ------------------------------------------------------------------------------------------------------------------------
-# URL and Response Structure for Currency Exchange Service
-
-### URL
-http://localhost:8000/currency-exchange/from/USD/to/INR
-
-### Response Structure
-{
-"id":10001,
-"from":"USD",
-"to":"INR",
-"conversionMultiple":65.00,
-"environment":"8000 instance-id"
-}
 ------------------------------------------------------------------------------------------------------------------------
 # Docker
 
@@ -38,17 +33,13 @@ http://localhost:8000/currency-exchange/from/USD/to/INR
   - Naming-server
     - image 'docker.io/kvandana/naming-server:0.0.1-SNAPSHOT'
 ------------------------------------------------------------------------------------------------------------------------
-
 ## Eureka
-- 
-
+- http://localhost:8761/Eureka
 ------------------------------------------------------------------------------------------------------------------------
-
 ## API GATEWAY
-- 
-
+- http://localhost:8765/currency-exchange/from/USD/to/INR
+- http://localhost:8765/currency-conversion-feign/from/USD/to/INR/quantity/10
 ------------------------------------------------------------------------------------------------------------------------
-
 # URLS
 
 - Currency Exchange Service
