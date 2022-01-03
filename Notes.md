@@ -90,3 +90,9 @@ currency-exchange-service - pom.xml
 		</dependency>
 
 ------------------------------------------------------------------------------------------------------------------------
+# Watch
+- run Windows PowerShell as Administrator
+- Set-ExecutionPolicy -ExecutionPolicy Unrestricted
+- Import-Module -Name 'Watch'
+
+------------------------------------------------------------------------------------------------------------------------
