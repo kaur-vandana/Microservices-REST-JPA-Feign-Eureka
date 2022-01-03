@@ -1,4 +1,4 @@
-package com.kaur.vandana.microservices.currencyconversationservice;
+package com.kaur.vandana.microservices.currencyconversionservice;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -11,14 +11,14 @@ import java.math.BigDecimal;
 import java.util.HashMap;
 
 @RestController
-public class CurrencyConversationController {
+public class CurrencyConversionController {
 
     @Autowired
     private CurrencyExchangeProxy proxy;
 
     // with Rest Template
     @GetMapping("/currency-conversion/from/{from}/to/{to}/quantity/{quantity}")
-    public CurrencyConversation retrieveCurrencyConversation(
+    public CurrencyConversion retrieveCurrencyConversion(
             @PathVariable String from,
             @PathVariable String to,
             @PathVariable BigDecimal quantity) {
@@ -27,38 +27,38 @@ public class CurrencyConversationController {
         uriVariables.put("from",from);
         uriVariables.put("to", to);
 
-        ResponseEntity<CurrencyConversation> responseEntity = new RestTemplate().getForEntity(
+        ResponseEntity<CurrencyConversion> responseEntity = new RestTemplate().getForEntity(
                 "http://localhost:8001/currency-exchange/from/{from}/to/{to}",
-                CurrencyConversation.class,
+                CurrencyConversion.class,
                 uriVariables);
 
-        CurrencyConversation currencyConversation = responseEntity.getBody();
+        CurrencyConversion currencyConversion = responseEntity.getBody();
 
-        currencyConversation.setTotalCalculatedAmount(quantity.multiply(currencyConversation.getConversionMultiple()));
+        currencyConversion.setTotalCalculatedAmount(quantity.multiply(currencyConversion.getConversionMultiple()));
 
-        return new CurrencyConversation(
-                currencyConversation.getId(),
+        return new CurrencyConversion(
+                currencyConversion.getId(),
                 from, to, quantity,
-                currencyConversation.getConversionMultiple(),
-                currencyConversation.getTotalCalculatedAmount(),
-                currencyConversation.getEnvironment());
+                currencyConversion.getConversionMultiple(),
+                currencyConversion.getTotalCalculatedAmount(),
+                currencyConversion.getEnvironment());
     }
 
 // with feign
     @GetMapping("/currency-conversion-feign/from/{from}/to/{to}/quantity/{quantity}")
-    public CurrencyConversation retrieveCurrencyConversationFeign(
+    public CurrencyConversion retrieveCurrencyConversionFeign(
             @PathVariable String from,
             @PathVariable String to,
             @PathVariable BigDecimal quantity) {
 
-        CurrencyConversation currencyConversation = proxy.retrieveExchangeValue_repository(from, to);
+        CurrencyConversion currencyConversion = proxy.retrieveExchangeValue_repository(from, to);
 
-        return new CurrencyConversation(
-                currencyConversation.getId(),
+        return new CurrencyConversion(
+                currencyConversion.getId(),
                 from, to, quantity,
-                currencyConversation.getConversionMultiple(),
-                quantity.multiply(currencyConversation.getConversionMultiple()),
-                currencyConversation.getEnvironment());
+                currencyConversion.getConversionMultiple(),
+                quantity.multiply(currencyConversion.getConversionMultiple()),
+                currencyConversion.getEnvironment());
     }
 
 

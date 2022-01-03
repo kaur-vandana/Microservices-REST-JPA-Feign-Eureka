@@ -31,9 +31,11 @@ http://localhost:8000/currency-exchange/from/USD/to/INR
 - Images
   - https://hub.docker.com/u/
 - Currency Exchange Service 
-  - 
+  - image 'docker.io/kvandana/currency-exchange-service:0.0.1-SNAPSHOT'
 - Currency Conversion Service
-  - 
+  - image 'docker.io/kvandana/currency-conversation-service:0.0.1-SNAPSHOT'
+- Naming-server
+  - image 'docker.io/kvandana/naming-server:0.0.1-SNAPSHOT'
 ------------------------------------------------------------------------------------------------------------------------
 
 ## Eureka
@@ -67,9 +69,28 @@ http://localhost:8000/currency-exchange/from/USD/to/INR
 
 # Commands
 - docker run -p 9411:9411 openzipkin/zipkin:2.23
-- docker push 
+
+add image config to pom 
+- Download and Install Maven (Path variables - Maven, M2_HOME)
+  - mvn spring-boot:build-image -DskipTests
+  - Images (829ff545d81f): 'docker.io/kvandana/currency-exchange-service:0.0.1-SNAPSHOT'
+  - Images (fc04a54317b4): 'docker.io/kvandana/naming-server:0.0.1-SNAPSHOT'
+  - Images (c6ccf58df9a5): 'docker.io/kvandana/currency-conversation-service:0.0.1-SNAPSHOT'
+  - Images (98a9607fbb65): 'docker.io/kvandana/api-gateway:0.0.1-SNAPSHOT'
+
+
+- docker run -p 8000:8000 kvandana/currency-exchange-service:0.0.1-SNAPSHOT
+- docker run -p 8001:8000 kvandana/currency-exchange-service:0.0.1-SNAPSHOT
+- docker run -p 8761:8761 kvandana/naming-server:0.0.1-SNAPSHOT
+- docker run -p 8100:8100 kvandana/currency-conversation-service:0.0.1-SNAPSHOT
+
+
+
 - docker-compose --version
+- - cd /Microservices-REST-JPA-Feign-Eureka
 - docker-compose up
+
+- docker push
 - docker push 
 - docker push 
 - docker push 

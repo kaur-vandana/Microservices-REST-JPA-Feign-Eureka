@@ -1,8 +1,8 @@
-package com.kaur.vandana.microservices.currencyconversationservice;
+package com.kaur.vandana.microservices.currencyconversionservice;
 
 import java.math.BigDecimal;
 
-public class CurrencyConversation {
+public class CurrencyConversion {
     private Long id;
     private String currencyfrom;
     private String currencyto;
@@ -11,11 +11,11 @@ public class CurrencyConversation {
     private BigDecimal totalCalculatedAmount;
     private String environment;
 
-    public CurrencyConversation() {
+    public CurrencyConversion() {
     }
 
-    public CurrencyConversation(Long id, String currencyfrom, String currencyto, BigDecimal quantity,
-                                BigDecimal conversionMultiple, BigDecimal totalCalculatedAmount, String environment) {
+    public CurrencyConversion(Long id, String currencyfrom, String currencyto, BigDecimal quantity,
+                              BigDecimal conversionMultiple, BigDecimal totalCalculatedAmount, String environment) {
         this.id = id;
         this.currencyfrom = currencyfrom;
         this.currencyto = currencyto;

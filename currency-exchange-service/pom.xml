@@ -59,7 +59,7 @@
 		<dependency>
 			<groupId>org.springframework.amqp</groupId>
 			<artifactId>spring-rabbit</artifactId>
-			<version>2.3.5</version>
+			<version>2.3.9</version>
 		</dependency>
 <!--		registry with eureka-->
 		<dependency>
@@ -107,6 +107,20 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+		<!-- we can use maven plugin to create image for our container
+			adding configuration for docker image-->
+				<configuration>
+				<!--	dockerID - 'kvandana'
+				{project.artifactId} - currency-exchange-service
+				TAG is the ${project.version} i.e. 0.0.1-SNAPSHOT-->
+					<image>
+						<name>kvandana/${project.artifactId}:${project.version}</name>
+					</image>
+					<!-- by default pull policy is 'always'
+					changing it to 'IF_NOT_PRESENT'
+					means if the docker image is not present locally , fetch it from docker-->
+					<pullPolicy>IF_NOT_PRESENT</pullPolicy>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>

@@ -7,8 +7,8 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="api-gateway" />
-        <module name="currency-conversation-service" />
         <module name="currency-exchange-service" />
+        <module name="currency-conversation-service" />
         <module name="naming-server" />
       </profile>
     </annotationProcessing>

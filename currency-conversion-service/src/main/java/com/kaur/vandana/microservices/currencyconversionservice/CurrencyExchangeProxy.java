@@ -1,4 +1,4 @@
-package com.kaur.vandana.microservices.currencyconversationservice;
+package com.kaur.vandana.microservices.currencyconversionservice;
 
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 @FeignClient(name = "currency-exchange")
 public interface CurrencyExchangeProxy {
     @GetMapping("/currency-exchange/from/{from}/to/{to}")
-    public CurrencyConversation retrieveExchangeValue_repository(
+    public CurrencyConversion retrieveExchangeValue_repository(
             @PathVariable String from,
             @PathVariable String to);
 }
