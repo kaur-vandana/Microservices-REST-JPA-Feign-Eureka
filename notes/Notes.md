@@ -44,7 +44,6 @@ currency-exchange-service - pom.xml
 
 ------------------------------------------------------------------------------------------------------------------------
 
-
 ### Docker
 
     `<build>
@@ -112,8 +111,11 @@ currency-exchange-service - pom.xml
 - each pod has a unique ip address
 - kubectl explain pods
 - kubectl get pods -o wide
-- kubectl kubectl describe pod 'id of the pod'
-- 
+- kubectl describe pod 'id of the pod'
+- kubectl delete pods 'id of the pod'
+- kubectl get rs
+- kubectl get rs -o wide
+- kubectl delete pod 'id of the pod'
 ------------------------------------------------------------------------------------------------------------------------
 ## https://cloud.google.com/
 - create an Account
