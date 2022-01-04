@@ -1,7 +1,7 @@
 - REST API with Spring Boot
 - Microservices with Spring Boot and Spring Cloud
 - Containers with Docker
-- orchestrate Microservices with Kubernetes
+- orchestrate Microservices with Kubernetes (GKE)
 
 - Spring Boot 2.4.x+ & Spring Cloud 2020.x+
 - Service Registry using Eureka Naming Server
@@ -78,7 +78,8 @@ add image config to pom
 - docker run -p 8100:8100 kvandana/currency-conversion-service:0.0.1-SNAPSHOT
 
 - docker-compose --version
-- - cd /Microservices-REST-JPA-Feign-Eureka
+
+- cd /Microservices-REST-JPA-Feign-Eureka
 - docker-compose up
 
 - docker push docker.io/kvandana/currency-exchange-service:0.0.1-SNAPSHOT
@@ -88,7 +89,18 @@ add image config to pom
 
 - watch -n 0.1 curl http://localhost:8000/sample-api
 
-- to remove an image : docker rmi -f fc04a54317b4
+- to remove an image : 
+  - docker rmi -f fc04a54317b4
+
+- gcloud container clusters get-credentials gc-kvandana --zone us-central1-c --project peak-tract-337209
+- kubectl version
+- kubectl create deployment currency-exchange-service --image=kvandana/currency-exchange-service:0.0.1-SNAPSHOT
+- kubectl expose deployment currency-exchange-service --type=LoadBalancer --port=8000
+- kubectl get events
+- kubectl get pods
+- kubectl get replicaset
+- kubectl get deployment
+- kubectl get service
 ------------------------------------------------------------------------------------------------------------------------
 
 ------------------------------------------------------------------------------------------------------------------------
